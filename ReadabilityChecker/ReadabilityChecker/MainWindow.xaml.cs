@@ -86,22 +86,28 @@ namespace ReadabilityChecker
 
             // change bar color and status depending on the score
             if (FKScore >= 0 && FKScore < 40) {
-                meterFKScore.Foreground = new SolidColorBrush(Colors.Crimson);
-                lblStatusDetails.Content = "Difficult Readability:\nBreak-up paragraphs into bullet\n" +
-                    "lists or steps. Write shorter sentences with simpler words.";
+                meterFKScore.Foreground = new SolidColorBrush(Colors.Firebrick);
+                lblStatusDetails.Content = "Difficult Readability:\n" +
+                    "Break-up paragraphs into\n" +
+                    "bullet lists or steps.\n" +
+                    "Write shorter sentences\n" +
+                    "with simpler words.";
             }
             else if (FKScore >= 40 && FKScore < 60) {
                 meterFKScore.Foreground = new SolidColorBrush(Colors.Orange);
-                lblStatusDetails.Content = "Medium Readability:\nBreak-up paragraphs into bullet\n" +
-                    "lists or steps. Write shorter sentences with simpler words.";
+                lblStatusDetails.Content = "Medium Readability:\n" +
+                    "Break-up paragraphs into\n" +
+                    "bullet lists or steps.\n" +
+                    "Write shorter sentences\n" +
+                    "with simpler words.";
             }
             else {
-                meterFKScore.Foreground = new SolidColorBrush(Colors.LimeGreen);
-                lblStatusDetails.Content = "Good Readability:\nThis text should be understood by\n" +
-                    "most readers words.";
+                meterFKScore.Foreground = new SolidColorBrush(Colors.MediumSpringGreen);
+                lblStatusDetails.Content = "Good Readability:\n" +
+                    "This text should be\n" +
+                    "understood by most\n" +
+                    "readers.";
             }
-
         }
-
     }
 }
