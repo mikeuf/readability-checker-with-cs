@@ -9,6 +9,7 @@ namespace ReadabilityChecker
     class RCTracker
     {
         // counters of different items found in provided text 
+        /*
         private int numWords;
         private int numSentences;
         private int numSyllables;
@@ -16,33 +17,50 @@ namespace ReadabilityChecker
         private int numIPs;
         private int numLists;
         private int numNBSPs;
+        */
+        internal int NumWords { get; set; }
+        internal int NumSentences { get; set; }
+        internal int NumSyllables { get; set; }
+       // internal int NumClosingPTags { get; set; }
+        internal int NumIPs { get; set; }
+        internal int NumLists { get; set; }
+        internal int NumNBSPs { get; set; }
 
         // calculated from the counter values
+        /*
         private double numWordsPerSentence;
         private double numSyllablesPerWord;
+        */
+        internal double NumWordsPerSentence { get; set; }
+        internal double NumSyllablesPerWord { get; set; }
 
         // after calculations, used to display readability scores
-        private double FKGrade;
-        private double FKScore;
+      //  private double FKGrade;
+      //  private double FKScore;
+
+        internal double FKGrade { get; set; }
+        internal double FKScore { get; set; }
 
         // constructor initializes counters
         public RCTracker()
         {
-            numWords = 0;
-            numSentences = 0;
-            numSyllables = 0;
-            numClosingPTags = 0;
-            numIPs = 0;
-            numLists = 0;
-            numNBSPs = 0;
-            numWordsPerSentence = 0;
-            numSyllablesPerWord = 0;
+            NumWords = 0;
+            NumSentences = 0;
+            NumSyllables = 0;
+          //  NumClosingPTags = 0;
+            NumIPs = 0;
+            NumLists = 0;
+            NumNBSPs = 0;
+            NumWordsPerSentence = 0;
+            NumSyllablesPerWord = 0;
             FKGrade = 0;
             FKScore = 0;
         }
 
         // getters
-        public int getNumWords() { return this.numWords; }
+        // public int getNumWords() { return this.numWords; }
+       // internal int NumWords { get; set; }
+       /*
         public int getNumSentences() { return this.numSentences; }
         public int getNumSyllables() { return this.numSyllables; }
         public int getNumClosingPTags() { return this.numClosingPTags; }
@@ -66,50 +84,50 @@ namespace ReadabilityChecker
         public void setNumSyllablesPerWord(double numSyllablesPerWord) { this.numSyllablesPerWord = numSyllablesPerWord; }
         public void setFKScore(double FKScore) { this.FKScore = FKScore; }
         public void setFKGrade(double FKGrade) { this.FKGrade = FKGrade; }
-
+        */
 
         public void applyModifiers()
         {
             // Don't count things like "1." and "2." at the beginning of lists as words or sentences
-            numWords -= numLists;
-            numSentences -= numLists;
+           NumWords -= NumLists;
+           NumSentences -= NumLists;
 
-            if (numIPs > 0)
+            if(NumIPs > 0)
             {
                 // Don"t count every octet of an IP address as a word
-                numWords -= (numIPs * 4);
+               NumWords -= (NumIPs * 4);
 
                 // Count entire IP address as exactly 1 word and 1 syllable
-                numWords += numIPs;
-                numSyllables += numIPs;
+               NumWords += NumIPs;
+               NumSyllables += NumIPs;
 
                 // Since IP addresses have periods, they will artificially boost sentence count by 3
                 // To correct this, substract 3 sentences per IP detected
-                numSentences -= (numIPs * 3);
+               NumSentences -= (NumIPs * 3);
             }
         } // end applyModifiers
 
-        public void calculateNumWordsPerSentence()
+        public void CalculateNumWordsPerSentence()
         {
-            if (numSentences > 0)
+            if(NumSentences > 0)
             {
-                setNumWordsPerSentence((double)getNumWords() / (double)getNumSentences());
+               NumWordsPerSentence = (double)NumWords / (double)NumSentences;
             }
-            Console.WriteLine("NumWordsPerSentence: " + (double)getNumWords() / (double)getNumSentences());
+            Console.WriteLine("NumWordsPerSentence: {0} / {1} = {2}", (double)NumWords, (double)NumSentences, ((double)NumWords / (double)NumSentences));
         }
 
-        public void calculateNumSyllablesPerWord()
+        public void CalculateNumSyllablesPerWord()
         {
-            if (numWords > 0)
+            if(NumWords > 0)
             {
-                setNumSyllablesPerWord((double)numSyllables / (double)numWords);
+               NumSyllablesPerWord = (double)NumSyllables / (double)NumWords;
             }
         }
 
-        public void calculateFKScore()
+        public void CalculateFKScore()
         {
             // calculate the Flesch-Kincaid Score
-            FKScore = (206.835 - (1.015 * numWordsPerSentence) - (84.6 * numSyllablesPerWord));
+            FKScore = (206.835 - (1.015 * NumWordsPerSentence) - (84.6 * NumSyllablesPerWord));
             if (FKScore < 0)
             {
                 FKScore = 0;  // minimum score = 0
@@ -120,10 +138,10 @@ namespace ReadabilityChecker
             }
         }
 
-        public void calculateFKGrade()
+        public void CalculateFKGrade()
         {
             // calculate the Flesch-Kincaid Grade
-            FKGrade = ((0.39 * numWordsPerSentence) + (11.8 * numSyllablesPerWord - 15.59));
+            FKGrade = ((0.39 * NumWordsPerSentence) + (11.8 * NumSyllablesPerWord - 15.59));
             if (FKGrade < 0)
             {
                 FKGrade = 0;

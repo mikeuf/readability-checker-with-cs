@@ -47,35 +47,35 @@ namespace ReadabilityChecker
        //     String plainText = stripHtmlTags(htmlEditor.getHtmlText());
 
             // sentence count requires both pre and post HTML strip scans
-           rctracker.setNumSentences(rcscanner.countSentencesPostHTMLStrip(txtMain.Text));
+           rctracker.NumSentences = rcscanner.countSentencesPostHTMLStrip(txtMain.Text);
 
          //   rctracker.setNumLists(rcscanner.countLists(htmlEditor.getHtmlText()));
 
             // post html tag strip
-            rctracker.setNumWords(rcscanner.countWords(txtMain.Text));
-            rctracker.setNumSyllables(rcscanner.countSyllables(txtMain.Text));
-            rctracker.setNumIPs(rcscanner.countIPs(txtMain.Text));
-            rctracker.setNumLists(rcscanner.countLists(txtMain.Text));
+            rctracker.NumWords = rcscanner.countWords(txtMain.Text);
+            rctracker.NumSyllables = rcscanner.countSyllables(txtMain.Text);
+            rctracker.NumIPs = rcscanner.countIPs(txtMain.Text);
+            rctracker.NumLists = rcscanner.countLists(txtMain.Text);
 
             // Adjust some counters for special cases, such as IP addresses
             rctracker.applyModifiers();
-            rctracker.calculateNumSyllablesPerWord();
-            rctracker.calculateNumWordsPerSentence();
-            rctracker.calculateFKGrade();
-            rctracker.calculateFKScore();
+            rctracker.CalculateNumSyllablesPerWord();
+            rctracker.CalculateNumWordsPerSentence();
+            rctracker.CalculateFKGrade();
+            rctracker.CalculateFKScore();
 
-            lblSyllableCount.Content = rctracker.getNumSyllables();
-            lblWordCount.Content = rctracker.getNumWords();
-            lblSentenceCount.Content = rctracker.getNumSentences();
+            lblSyllableCount.Content = rctracker.NumSyllables;
+            lblWordCount.Content = rctracker.NumWords;
+            lblSentenceCount.Content = rctracker.NumSentences;
 
-            lblSyllablesPerWordCount.Content = Math.Round(rctracker.getNumSyllablesPerWord(), 2, MidpointRounding.AwayFromZero);
-            lblWordsPerSentenceCount.Content = Math.Round(rctracker.getNumWordsPerSentence(), 2, MidpointRounding.AwayFromZero);
-            lblFKGradeNumber.Content = Math.Round(rctracker.getFKGrade(), 2, MidpointRounding.AwayFromZero); 
-            lblFKScoreNumber.Content = Math.Round(rctracker.getFKScore(), 2, MidpointRounding.AwayFromZero);
+            lblSyllablesPerWordCount.Content = Math.Round(rctracker.NumSyllablesPerWord, 2, MidpointRounding.AwayFromZero);
+            lblWordsPerSentenceCount.Content = Math.Round(rctracker.NumWordsPerSentence, 2, MidpointRounding.AwayFromZero);
+            lblFKGradeNumber.Content = Math.Round(rctracker.FKGrade, 2, MidpointRounding.AwayFromZero); 
+            lblFKScoreNumber.Content = Math.Round(rctracker.FKScore, 2, MidpointRounding.AwayFromZero);
 
 
             // using a local variable for readability
-            double FKScore = rctracker.getFKScore();
+            double FKScore = rctracker.FKScore;
 
             // update the progress bar length based on the score
             meterFKScore.Value = (FKScore);
@@ -112,7 +112,7 @@ namespace ReadabilityChecker
             }
 
             // if the word count is low, warn the user that the score may not be useful
-            if (rctracker.getNumWords() <= 20)
+            if (rctracker.NumWords <= 20)
             {
                 lblStatusDetails.Content = "Low sample size:\n" +
                     "The sample size is\n" +
