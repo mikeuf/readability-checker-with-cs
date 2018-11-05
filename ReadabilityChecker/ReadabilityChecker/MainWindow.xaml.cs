@@ -71,6 +71,37 @@ namespace ReadabilityChecker
             lblFKGradeNumber.Content = rctracker.getFKGrade();
             lblFKScoreNumber.Content = rctracker.getFKScore();
 
+
+            // using a local variable for readability
+            double FKScore = rctracker.getFKScore();
+
+            // update the progress bar length based on the score
+            meterFKScore.Value = (FKScore);
+            meterFKScore.Foreground = new SolidColorBrush(Colors.Orange);
+
+            // set a minimum bar length for really low scores
+            if (FKScore <= 5) {
+                meterFKScore.Value = 5;
+            }
+
+            // change bar color and status depending on the score
+            if (FKScore >= 0 && FKScore < 40) {
+                meterFKScore.Foreground = new SolidColorBrush(Colors.Crimson);
+                lblStatusDetails.Content = "Difficult Readability:\nBreak-up paragraphs into bullet\n" +
+                    "lists or steps. Write shorter sentences with simpler words.";
+            }
+            else if (FKScore >= 40 && FKScore < 60) {
+                meterFKScore.Foreground = new SolidColorBrush(Colors.Orange);
+                lblStatusDetails.Content = "Medium Readability:\nBreak-up paragraphs into bullet\n" +
+                    "lists or steps. Write shorter sentences with simpler words.";
+            }
+            else {
+                meterFKScore.Foreground = new SolidColorBrush(Colors.LimeGreen);
+                lblStatusDetails.Content = "Good Readability:\nThis text should be understood by\n" +
+                    "most readers words.";
+            }
+
         }
+
     }
 }
