@@ -14,42 +14,25 @@ namespace ReadabilityChecker
 
         public int countIPs(String s)
         {
-
             // private static readonly Regex IP_PATTERN = new Regex("((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
            var IP_PATTERN = new Regex(@"((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
-
-            
-         int i = 0;
-       //  Pattern p = Pattern.compile(IP_PATTERN);
-       //  Matcher matcher = p.matcher(s);
-       var m = IP_PATTERN.Match(s);
-
-             while (matcher.find())
-             {
-                 ++i;
-             }
-             return i;
-                     
+            MatchCollection matches = IP_PATTERN.Matches(s);
+        
+             return matches.Count;                     
         }
 
 
         public int countLists(String s)
 {
+            //  private static readonly String LIST_PATTERN = "((<.*>)?(<p>|<h>|<li>|<br>|<br \\/>)(<.*>)?((\\d{1,2}\\.)|(\\d{1,2}\\))\\s))";
+            var LIST_PATTERN = new Regex(@"((<.*>)?(<p>|<h>|<li>|<br>|<br \/>)(<.*>)?((\d{1,2}\.)|(\d{1,2}\))\s))");
+            MatchCollection matches = LIST_PATTERN.Matches(s);
 
-        private static readonly String LIST_PATTERN = "((<.*>)?(<p>|<h>|<li>|<br>|<br \\/>)(<.*>)?((\\d{1,2}\\.)|(\\d{1,2}\\))\\s))";
-
-int i = 0;
-Pattern p = Pattern.compile(LIST_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
+            return matches.Count;
         }
 
 
-
+        /*
         public int countNBSPs(String s)
 {
 
@@ -79,21 +62,18 @@ Matcher matcher = p.matcher(s);
             }
             return i;
         }
+        */
 
         public int countWords(String s)
 {
 
-        private static readonly String WORD_PATTERN = "(\\b\\s?\\w+-?\'?\\w*\\b)";
+        var WORD_PATTERN = new Regex(@"(\b\s?\w+-?\'?\w*\b)");
 
-int i = 0;
-Pattern p = Pattern.compile(WORD_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
-        }
+    MatchCollection matches = WORD_PATTERN.Matches(s);
+
+    return matches.Count;
+}
+        /*
 
         public int countSyllables(String s)
 {
@@ -136,5 +116,6 @@ Matcher matcher = p.matcher(s);
             }
             return i;
         }
+        */
     }
 }
