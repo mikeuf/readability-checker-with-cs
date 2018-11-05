@@ -95,6 +95,7 @@ namespace ReadabilityChecker
             {
                 setNumWordsPerSentence((double)getNumWords() / (double)getNumSentences());
             }
+            Console.WriteLine("NumWordsPerSentence: " + (double)getNumWords() / (double)getNumSentences());
         }
 
         public void calculateNumSyllablesPerWord()

@@ -25,7 +25,9 @@ namespace ReadabilityChecker
         public int countLists(String s)
 {
             //  private static readonly String LIST_PATTERN = "((<.*>)?(<p>|<h>|<li>|<br>|<br \\/>)(<.*>)?((\\d{1,2}\\.)|(\\d{1,2}\\))\\s))";
-            var LIST_PATTERN = new Regex(@"((<.*>)?(<p>|<h>|<li>|<br>|<br \/>)(<.*>)?((\d{1,2}\.)|(\d{1,2}\))\s))");
+            // var LIST_PATTERN = new Regex(@"((<.*>)?(<p>|<h>|<li>|<br>|<br \/>)(<.*>)?((\d{1,2}\.)|(\d{1,2}\))\s))");
+            var LIST_PATTERN = new Regex(@"(\n|\r|\r\n)");
+
             MatchCollection matches = LIST_PATTERN.Matches(s);
 
             return matches.Count;
@@ -83,7 +85,7 @@ public int countSentencesPostHTMLStrip(String s) {
 
 
 
-                    var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)\""\']*[\.!?;]+[""\']?");
+                    var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)\""\']*([\.!?;]|(\n|\r|\r\n))+[""\']?");
 
          MatchCollection matches = POST_HTML_STRIP_SENTENCE_PATTERN.Matches(s);
 

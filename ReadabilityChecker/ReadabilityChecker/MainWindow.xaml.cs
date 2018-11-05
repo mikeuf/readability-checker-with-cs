@@ -56,9 +56,20 @@ namespace ReadabilityChecker
             rctracker.setNumSyllables(rcscanner.countSyllables(txtMain.Text));
             rctracker.setNumIPs(rcscanner.countIPs(txtMain.Text));
 
+            // Adjust some counters for special cases, such as IP addresses
+            rctracker.applyModifiers();
+            rctracker.calculateNumSyllablesPerWord();
+            rctracker.calculateNumWordsPerSentence();
+            rctracker.calculateFKGrade();
+            rctracker.calculateFKScore();
+
             lblSyllableCount.Content = rctracker.getNumSyllables();
             lblWordCount.Content = rctracker.getNumWords();
             lblSentenceCount.Content = rctracker.getNumSentences();
+            lblSyllablesPerWordCount.Content = rctracker.getNumSyllablesPerWord();
+            lblWordsPerSentenceCount.Content = rctracker.getNumWordsPerSentence();
+            lblFKGradeNumber.Content = rctracker.getFKGrade();
+            lblFKScoreNumber.Content = rctracker.getFKScore();
 
         }
     }
