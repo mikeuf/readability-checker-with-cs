@@ -74,14 +74,14 @@ namespace ReadabilityChecker {
                 meterFKScore.Foreground = new SolidColorBrush(Colors.Firebrick);
                 lblStatusDetails.Content = "Difficult Readability:\n" +
                     "Break-up paragraphs into\n" +
-                    "bullet lists or steps.\n" +
+                    "bullet lists of steps.\n" +
                     "Write shorter sentences\n" +
                     "with simpler words.";
             } else if (tracker.FKScore >= 40 && tracker.FKScore < 60) {
                 meterFKScore.Foreground = new SolidColorBrush(Colors.Orange);
                 lblStatusDetails.Content = "Medium Readability:\n" +
                     "Break-up paragraphs into\n" +
-                    "bullet lists or steps.\n" +
+                    "bullet lists of steps.\n" +
                     "Write shorter sentences\n" +
                     "with simpler words.";
             } else {
@@ -95,10 +95,9 @@ namespace ReadabilityChecker {
             // if the word count is low, warn the user that the score may not be useful
             if (tracker.NumWords <= 20) {
                 lblStatusDetails.Content = "Low Word Count:\n" +
-                    "The sample size is\n" +
-                    "is small. The may\n" +
-                    "result in unreliable\n" +
-                    "scores.";
+                    "The sample size is small.\n" +
+                    "This may result in\n" +
+                    "unreliable scores.";
             }
         }
     }

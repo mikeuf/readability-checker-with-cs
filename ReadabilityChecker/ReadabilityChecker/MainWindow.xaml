@@ -19,7 +19,7 @@
             <ColumnDefinition Width="880*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="738" Margin="10,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="836" Padding="10" AcceptsReturn="True" AcceptsTab="True" FontSize="18px" Grid.Column="2"/>
+        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="738" Margin="10,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="836" Padding="15" AcceptsReturn="True" AcceptsTab="True" FontSize="18px" Grid.Column="2"/>
         <Rectangle HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="1195" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -51,7 +51,7 @@
         <Label x:Name="lblScoreAndAnalysis" Content="Score and Analysis" HorizontalAlignment="Left" Margin="44,113,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" Width="230"/>
         <ProgressBar x:Name="meterFKScore" HorizontalAlignment="Left" Height="20" Margin="44,160,0,0" VerticalAlignment="Top" Width="230" Grid.ColumnSpan="2" Foreground="#FF72FFA5" />
         <Label x:Name="lblStatus" Content="Status" HorizontalAlignment="Left" Margin="44,478,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="lblStatusDetails" Content="Ready to scan" HorizontalAlignment="Left" Margin="44,512,0,0" VerticalAlignment="Top" Width="230" Height="112" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblStatusDetails" Content="Ready to scan" HorizontalAlignment="Left" Margin="44,512,0,0" VerticalAlignment="Top" Width="230" Height="144" Grid.ColumnSpan="2"/>
         <Rectangle Fill="#FF40648F" HorizontalAlignment="Left" Height="38" Stroke="Black" VerticalAlignment="Top" Width="1195" Grid.ColumnSpan="3" Margin="0,880,0,-0.5"/>
 
 
