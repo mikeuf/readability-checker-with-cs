@@ -21,12 +21,15 @@ namespace ReadabilityChecker {
         public MainWindow() {
             InitializeComponent();
         }
-        /*
-         * When the Check Readability button is clicked it instantiates the
-         * RCScanner and RCTracker classes objects. 
-         * It then populates the form labels with the various counts and scores
-         * and updates the meter (progress bar) to reflect the score
-         */
+
+         /// <summary>
+         /// When the Check Readability button is clicked it instantiates the
+         /// RCScanner and RCTracker classes objects.
+         /// It then populates the form labels with the various counts and scores
+         /// and updates the meter(progress bar) to reflect the score
+         /// </summary>
+         /// <param name="sender">the Check Readability button</param>
+         /// <param name="e">the button does not take any arguments</param>
         private void Button_Click(object sender, RoutedEventArgs e) {
             RCScanner scanner = new RCScanner();
             RCTracker tracker = new RCTracker();
