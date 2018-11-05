@@ -2,23 +2,20 @@
 using System.Windows;
 using System.Windows.Media;
 
-
-namespace ReadabilityChecker
-{
+namespace ReadabilityChecker {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// The Readability Checker performs a Flesch-Kincaid (FK) readability analysis.
+    /// It scans the characters in the text and counts the number of words, syllables 
+    /// and sentences in order to determine the readability.
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+    public partial class MainWindow : Window {
+        public MainWindow() {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           // MessageBox.Show(txtMain.Text);
-           // lblWordCount.Content = "Hello";
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            // MessageBox.Show(txtMain.Text);
+            // lblWordCount.Content = "Hello";
 
             RCScanner rcscanner = new RCScanner();
             RCTracker rctracker = new RCTracker();
@@ -34,12 +31,12 @@ namespace ReadabilityChecker
                        * into lists it is better detect lists items as sentences, which 
                        * improves the readability score.
              */
-       //     String plainText = stripHtmlTags(htmlEditor.getHtmlText());
+            //     String plainText = stripHtmlTags(htmlEditor.getHtmlText());
 
             // sentence count requires both pre and post HTML strip scans
-           rctracker.NumSentences = rcscanner.CountSentences(txtMain.Text);
+            rctracker.NumSentences = rcscanner.CountSentences(txtMain.Text);
 
-         //   rctracker.setNumLists(rcscanner.CountLists(htmlEditor.getHtmlText()));
+            //   rctracker.setNumLists(rcscanner.CountLists(htmlEditor.getHtmlText()));
 
             // post html tag strip
             rctracker.NumWords = rcscanner.CountWords(txtMain.Text);
@@ -60,7 +57,7 @@ namespace ReadabilityChecker
 
             lblSyllablesPerWordCount.Content = Math.Round(rctracker.NumSyllablesPerWord, 2, MidpointRounding.AwayFromZero);
             lblWordsPerSentenceCount.Content = Math.Round(rctracker.NumWordsPerSentence, 2, MidpointRounding.AwayFromZero);
-            lblFKGradeNumber.Content = Math.Round(rctracker.FKGrade, 2, MidpointRounding.AwayFromZero); 
+            lblFKGradeNumber.Content = Math.Round(rctracker.FKGrade, 2, MidpointRounding.AwayFromZero);
             lblFKScoreNumber.Content = Math.Round(rctracker.FKScore, 2, MidpointRounding.AwayFromZero);
 
 
@@ -84,16 +81,14 @@ namespace ReadabilityChecker
                     "bullet lists or steps.\n" +
                     "Write shorter sentences\n" +
                     "with simpler words.";
-            }
-            else if (FKScore >= 40 && FKScore < 60) {
+            } else if (FKScore >= 40 && FKScore < 60) {
                 meterFKScore.Foreground = new SolidColorBrush(Colors.Orange);
                 lblStatusDetails.Content = "Medium Readability:\n" +
                     "Break-up paragraphs into\n" +
                     "bullet lists or steps.\n" +
                     "Write shorter sentences\n" +
                     "with simpler words.";
-            }
-            else {
+            } else {
                 meterFKScore.Foreground = new SolidColorBrush(Colors.MediumSpringGreen);
                 lblStatusDetails.Content = "Good Readability:\n" +
                     "This text should be\n" +
@@ -102,8 +97,7 @@ namespace ReadabilityChecker
             }
 
             // if the word count is low, warn the user that the score may not be useful
-            if (rctracker.NumWords <= 20)
-            {
+            if (rctracker.NumWords <= 20) {
                 lblStatusDetails.Content = "Low Word Count:\n" +
                     "The sample size is\n" +
                     "is small. The may\n" +

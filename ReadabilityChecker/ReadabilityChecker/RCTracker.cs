@@ -1,10 +1,11 @@
 ﻿using System;
 
-
-namespace ReadabilityChecker
-{
-    class RCTracker
-    {
+namespace ReadabilityChecker {
+    /// <summary>
+    /// Scans the text and counts the number of items found, such as
+    /// words, syllables and sentences.
+    /// </summary>
+    class RCTracker {
         // counters of different items found in provided text 
         /*
         private int numWords;
@@ -39,8 +40,7 @@ namespace ReadabilityChecker
         internal double FKScore { get; set; }
 
         // constructor initializes counters
-        public RCTracker()
-        {
+        public RCTracker() {
             NumWords = 0;
             NumSentences = 0;
             NumSyllables = 0;
@@ -83,14 +83,12 @@ namespace ReadabilityChecker
         public void setFKGrade(double FKGrade) { this.FKGrade = FKGrade; }
         */
 
-        public void ApplyModifiers()
-        {
+        public void ApplyModifiers() {
             // Don't count things like "1." and "2." at the beginning of lists as words or sentences
            NumWords -= NumLists;
            NumSentences -= NumLists;
 
-            if(NumIPs > 0)
-            {
+            if (NumIPs > 0) {
                 // Don"t count every octet of an IP address as a word
                NumWords -= (NumIPs * 4);
 
@@ -104,43 +102,34 @@ namespace ReadabilityChecker
             }
         }
 
-        public void CalculateNumWordsPerSentence()
-        {
-            if(NumSentences > 0)
-            {
+        public void CalculateNumWordsPerSentence() {
+            if(NumSentences > 0) {
                NumWordsPerSentence = (double)NumWords / (double)NumSentences;
             }
             Console.WriteLine("NumWordsPerSentence: {0} / {1} = {2}", (double)NumWords, (double)NumSentences, ((double)NumWords / (double)NumSentences));
         }
 
-        public void CalculateNumSyllablesPerWord()
-        {
-            if(NumWords > 0)
-            {
+        public void CalculateNumSyllablesPerWord() {
+            if(NumWords > 0) {
                NumSyllablesPerWord = (double)NumSyllables / (double)NumWords;
             }
         }
 
-        public void CalculateFKScore()
-        {
+        public void CalculateFKScore() {
             // calculate the Flesch-Kincaid Score
             FKScore = (206.835 - (1.015 * NumWordsPerSentence) - (84.6 * NumSyllablesPerWord));
-            if (FKScore < 0)
-            {
+            if (FKScore < 0) {
                 FKScore = 0;  // minimum score = 0
             }
-            if (FKScore > 100)
-            {
+            if (FKScore > 100) {
                 FKScore = 100;  // max score = 100
             }
         }
 
-        public void CalculateFKGrade()
-        {
+        public void CalculateFKGrade() {
             // calculate the Flesch-Kincaid Grade
             FKGrade = ((0.39 * NumWordsPerSentence) + (11.8 * NumSyllablesPerWord - 15.59));
-            if (FKGrade < 0)
-            {
+            if (FKGrade < 0) {
                 FKGrade = 0;
             } //minimum score = 0
         }
