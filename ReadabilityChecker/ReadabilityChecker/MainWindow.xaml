@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="367" Margin="233,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="544"/>
+        <Button x:Name="btnCheckReadability" Content="Readability Checker" HorizontalAlignment="Left" Margin="28,44,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="39"/>
+
     </Grid>
 </Window>

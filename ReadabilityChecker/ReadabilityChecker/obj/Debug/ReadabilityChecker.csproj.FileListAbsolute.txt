@@ -1,0 +1,15 @@
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\bin\Debug\ReadabilityChecker.exe.config
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\bin\Debug\ReadabilityChecker.exe
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\bin\Debug\ReadabilityChecker.pdb
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.csprojAssemblyReference.cache
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\MainWindow.g.cs
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\App.g.cs
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker_MarkupCompile.cache
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker_MarkupCompile.lref
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\MainWindow.baml
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.g.resources
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.Properties.Resources.resources
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.csproj.GenerateResource.cache
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.csproj.CoreCompileInputs.cache
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.exe
+W:\dev\git\readability-checker-with-cs\ReadabilityChecker\ReadabilityChecker\obj\Debug\ReadabilityChecker.pdb
