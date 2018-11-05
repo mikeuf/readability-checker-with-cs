@@ -55,6 +55,7 @@ namespace ReadabilityChecker
             rctracker.setNumWords(rcscanner.countWords(txtMain.Text));
             rctracker.setNumSyllables(rcscanner.countSyllables(txtMain.Text));
             rctracker.setNumIPs(rcscanner.countIPs(txtMain.Text));
+            rctracker.setNumLists(rcscanner.countLists(txtMain.Text));
 
             // Adjust some counters for special cases, such as IP addresses
             rctracker.applyModifiers();
@@ -66,6 +67,7 @@ namespace ReadabilityChecker
             lblSyllableCount.Content = rctracker.getNumSyllables();
             lblWordCount.Content = rctracker.getNumWords();
             lblSentenceCount.Content = rctracker.getNumSentences();
+
             lblSyllablesPerWordCount.Content = Math.Round(rctracker.getNumSyllablesPerWord(), 2, MidpointRounding.AwayFromZero);
             lblWordsPerSentenceCount.Content = Math.Round(rctracker.getNumWordsPerSentence(), 2, MidpointRounding.AwayFromZero);
             lblFKGradeNumber.Content = Math.Round(rctracker.getFKGrade(), 2, MidpointRounding.AwayFromZero); 

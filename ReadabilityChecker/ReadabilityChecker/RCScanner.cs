@@ -26,10 +26,12 @@ namespace ReadabilityChecker
 {
             //  private static readonly String LIST_PATTERN = "((<.*>)?(<p>|<h>|<li>|<br>|<br \\/>)(<.*>)?((\\d{1,2}\\.)|(\\d{1,2}\\))\\s))";
             // var LIST_PATTERN = new Regex(@"((<.*>)?(<p>|<h>|<li>|<br>|<br \/>)(<.*>)?((\d{1,2}\.)|(\d{1,2}\))\s))");
-            var LIST_PATTERN = new Regex(@"(\n|\r|\r\n)");
+           // var LIST_PATTERN = new Regex(@"(\n|\r|\r\n)");
+            var LIST_PATTERN = new Regex(@"(^|\n)(\d|\w){1,2}?[\.)](\s{1,2}|\t)([A-z]|\d)");
 
             MatchCollection matches = LIST_PATTERN.Matches(s);
 
+            Console.WriteLine("Lists: " + matches.Count);
             return matches.Count;
         }
 
@@ -85,9 +87,13 @@ public int countSentencesPostHTMLStrip(String s) {
 
 
 
-                    var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)\""\']*([\.!?;]|(\n|\r|\r\n))+[""\']?");
+                 //   var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)\""\']*([\.!?;]|(\n|\r|\r\n))+[""\']?");
+
+            var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{1,2}|[0-9]{1,2})?[\}\]\)\""\']*([\.!?;]|(\n|\r|\r\n))+[""\']?");
 
          MatchCollection matches = POST_HTML_STRIP_SENTENCE_PATTERN.Matches(s);
+
+            Console.WriteLine("Sentences: " + matches.Count);
 
             return matches.Count;
         }
