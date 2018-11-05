@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ReadabilityChecker
 {
@@ -86,7 +83,7 @@ namespace ReadabilityChecker
         public void setFKGrade(double FKGrade) { this.FKGrade = FKGrade; }
         */
 
-        public void applyModifiers()
+        public void ApplyModifiers()
         {
             // Don't count things like "1." and "2." at the beginning of lists as words or sentences
            NumWords -= NumLists;
@@ -105,7 +102,7 @@ namespace ReadabilityChecker
                 // To correct this, substract 3 sentences per IP detected
                NumSentences -= (NumIPs * 3);
             }
-        } // end applyModifiers
+        }
 
         public void CalculateNumWordsPerSentence()
         {

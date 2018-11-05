@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace ReadabilityChecker
 {
@@ -47,18 +37,18 @@ namespace ReadabilityChecker
        //     String plainText = stripHtmlTags(htmlEditor.getHtmlText());
 
             // sentence count requires both pre and post HTML strip scans
-           rctracker.NumSentences = rcscanner.countSentencesPostHTMLStrip(txtMain.Text);
+           rctracker.NumSentences = rcscanner.CountSentences(txtMain.Text);
 
-         //   rctracker.setNumLists(rcscanner.countLists(htmlEditor.getHtmlText()));
+         //   rctracker.setNumLists(rcscanner.CountLists(htmlEditor.getHtmlText()));
 
             // post html tag strip
-            rctracker.NumWords = rcscanner.countWords(txtMain.Text);
-            rctracker.NumSyllables = rcscanner.countSyllables(txtMain.Text);
-            rctracker.NumIPs = rcscanner.countIPs(txtMain.Text);
-            rctracker.NumLists = rcscanner.countLists(txtMain.Text);
+            rctracker.NumWords = rcscanner.CountWords(txtMain.Text);
+            rctracker.NumSyllables = rcscanner.CountSyllables(txtMain.Text);
+            rctracker.NumIPs = rcscanner.CountIPs(txtMain.Text);
+            rctracker.NumLists = rcscanner.CountLists(txtMain.Text);
 
             // Adjust some counters for special cases, such as IP addresses
-            rctracker.applyModifiers();
+            rctracker.ApplyModifiers();
             rctracker.CalculateNumSyllablesPerWord();
             rctracker.CalculateNumWordsPerSentence();
             rctracker.CalculateFKGrade();
@@ -114,7 +104,7 @@ namespace ReadabilityChecker
             // if the word count is low, warn the user that the score may not be useful
             if (rctracker.NumWords <= 20)
             {
-                lblStatusDetails.Content = "Low sample size:\n" +
+                lblStatusDetails.Content = "Low Word Count:\n" +
                     "The sample size is\n" +
                     "is small. The may\n" +
                     "result in unreliable\n" +
