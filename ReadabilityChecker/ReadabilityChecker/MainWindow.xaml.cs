@@ -110,6 +110,16 @@ namespace ReadabilityChecker
                     "understood by most\n" +
                     "readers.";
             }
+
+            // if the word count is low, warn the user that the score may not be useful
+            if (rctracker.getNumWords() <= 20)
+            {
+                lblStatusDetails.Content = "Low sample size:\n" +
+                    "The sample size is\n" +
+                    "is small. The may\n" +
+                    "result in unreliable\n" +
+                    "scores.";
+            }
         }
     }
 }

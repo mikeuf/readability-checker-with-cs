@@ -26,13 +26,23 @@ namespace ReadabilityChecker
 {
             //  private static readonly String LIST_PATTERN = "((<.*>)?(<p>|<h>|<li>|<br>|<br \\/>)(<.*>)?((\\d{1,2}\\.)|(\\d{1,2}\\))\\s))";
             // var LIST_PATTERN = new Regex(@"((<.*>)?(<p>|<h>|<li>|<br>|<br \/>)(<.*>)?((\d{1,2}\.)|(\d{1,2}\))\s))");
-           // var LIST_PATTERN = new Regex(@"(\n|\r|\r\n)");
-            var LIST_PATTERN = new Regex(@"(^|\n)(\d|\w){1,2}?[\.)](\s{1,2}|\t)([A-z]|\d)");
+            // var LIST_PATTERN = new Regex(@"(\n|\r|\r\n)");
+            // var LIST_PATTERN = new Regex(@"(^|\n)(\d|\w){1,2}?[\.)](\s{1,2}|\t)([A-z]|\d)");
 
-            MatchCollection matches = LIST_PATTERN.Matches(s);
+            string LIST_PATTERN = @"^([A-Za-z]|[0-9]){1,2}[\.)].*$";
+           // int matchCount = 0;
+            MatchCollection matches = Regex.Matches(s, LIST_PATTERN, RegexOptions.Multiline);
+
+            Console.WriteLine(matches.Count);
+    
+            return matches.Count;
+            /*
+            Regex LIST_PATTERN = new Regex(@"^([A-Za-z]|[0-9]){1,2}[\.)].*$");
+
+MatchCollection matches = LIST_PATTERN.Matches(s);
 
             Console.WriteLine("Lists: " + matches.Count);
-            return matches.Count;
+            return matches.Count; */
         }
 
 
