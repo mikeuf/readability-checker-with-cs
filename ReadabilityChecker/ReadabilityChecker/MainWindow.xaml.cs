@@ -66,10 +66,10 @@ namespace ReadabilityChecker
             lblSyllableCount.Content = rctracker.getNumSyllables();
             lblWordCount.Content = rctracker.getNumWords();
             lblSentenceCount.Content = rctracker.getNumSentences();
-            lblSyllablesPerWordCount.Content = rctracker.getNumSyllablesPerWord();
-            lblWordsPerSentenceCount.Content = rctracker.getNumWordsPerSentence();
-            lblFKGradeNumber.Content = rctracker.getFKGrade();
-            lblFKScoreNumber.Content = rctracker.getFKScore();
+            lblSyllablesPerWordCount.Content = Math.Round(rctracker.getNumSyllablesPerWord(), 2, MidpointRounding.AwayFromZero);
+            lblWordsPerSentenceCount.Content = Math.Round(rctracker.getNumWordsPerSentence(), 2, MidpointRounding.AwayFromZero);
+            lblFKGradeNumber.Content = Math.Round(rctracker.getFKGrade(), 2, MidpointRounding.AwayFromZero); 
+            lblFKScoreNumber.Content = Math.Round(rctracker.getFKScore(), 2, MidpointRounding.AwayFromZero);
 
 
             // using a local variable for readability

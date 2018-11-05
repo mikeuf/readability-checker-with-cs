@@ -5,30 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReadabilityChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="779.215" Width="1161.919" FontSize="14">
+        Title="MainWindow" Height="945" Width="1200" FontSize="14" Foreground="#FF8F989C" Background="#FFF1F8FF">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="880*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="733" Margin="291,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="856" AcceptsReturn="True" AcceptsTab="True" FontSize="18px"/>
-        <Button x:Name="btnCheckReadability" Content="Readability Checker" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="39" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Width="87"/>
-        <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="184,283,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="124"/>
-        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="184,309,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblSyllables" Content="Syllables:" HorizontalAlignment="Left" Margin="10,335,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lblSyllableCount" Content="" HorizontalAlignment="Left" Margin="184,335,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblSyllablesPerWord" Content="Syllables Per Word:" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lblSyllablesPerWordCount" Content="" HorizontalAlignment="Left" Margin="184,361,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblWordsPerSentence" Content="Words Per Sentence:" HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lblWordsPerSentenceCount" Content="" HorizontalAlignment="Left" Margin="184,388,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblDetails" Content="Details" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="lblFKGrade" Content="Flesch-Kincaid Grade:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lblFKGradeNumber" Content="" HorizontalAlignment="Left" Margin="184,160,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblFKScore" Content="Flesch-Kincaid Score:" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Width="161"/>
-        <Label x:Name="lblFKScoreNumber" Content="" HorizontalAlignment="Left" Margin="184,186,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblScoreAndAnalysis" Content="Score and Analysis" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <ProgressBar x:Name="meterFKScore" HorizontalAlignment="Left" Height="20" Margin="10,135,0,0" VerticalAlignment="Top" Width="167" />
-        <Label x:Name="lblStatus" Content="Status" HorizontalAlignment="Left" Margin="10,462,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="lblStatusDetails" Content="" HorizontalAlignment="Left" Margin="10,496,0,0" VerticalAlignment="Top" Width="229" Height="111"/>
+        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="738" Margin="74,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="863" AcceptsReturn="True" AcceptsTab="True" FontSize="18px" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="#FF40648F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="1195" Grid.ColumnSpan="3"/>
+        <Button x:Name="btnCheckReadability" Content="Check Readability" HorizontalAlignment="Left" Margin="32,18,0,0" VerticalAlignment="Top" Width="229" Click="Button_Click" Height="42" Background="#FFF1F8FF" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="32,283,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="206,283,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="32,309,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="206,309,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSyllables" Content="Syllables:" HorizontalAlignment="Left" Margin="32,335,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="lblSyllableCount" Content="" HorizontalAlignment="Left" Margin="206,335,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSyllablesPerWord" Content="Syllables Per Word:" HorizontalAlignment="Left" Margin="32,361,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="lblSyllablesPerWordCount" Content="" HorizontalAlignment="Left" Margin="206,361,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblWordsPerSentence" Content="Words Per Sentence:" HorizontalAlignment="Left" Margin="32,388,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="lblWordsPerSentenceCount" Content="" HorizontalAlignment="Left" Margin="206,388,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblDetails" Content="Details" HorizontalAlignment="Left" Margin="32,249,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblFKGrade" Content="Flesch-Kincaid Grade:" HorizontalAlignment="Left" Margin="32,160,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="lblFKGradeNumber" Content="" HorizontalAlignment="Left" Margin="206,160,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblFKScore" Content="Flesch-Kincaid Score:" HorizontalAlignment="Left" Margin="32,186,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="lblFKScoreNumber" Content="" HorizontalAlignment="Left" Margin="206,186,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblScoreAndAnalysis" Content="Score and Analysis" HorizontalAlignment="Left" Margin="32,96,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Grid.ColumnSpan="2" Width="203"/>
+        <ProgressBar x:Name="meterFKScore" HorizontalAlignment="Left" Height="20" Margin="32,135,0,0" VerticalAlignment="Top" Width="229" Grid.ColumnSpan="2" />
+        <Label x:Name="lblStatus" Content="Status" HorizontalAlignment="Left" Margin="32,462,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="lblStatusDetails" Content="" HorizontalAlignment="Left" Margin="32,496,0,0" VerticalAlignment="Top" Width="229" Height="111" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="#FF40648F" HorizontalAlignment="Left" Height="38" Stroke="Black" VerticalAlignment="Top" Width="1195" Grid.ColumnSpan="3" Margin="0,880,0,-0.5"/>
+
 
     </Grid>
 </Window>
