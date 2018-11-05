@@ -53,7 +53,10 @@ namespace ReadabilityChecker
 
             // post html tag strip
             rctracker.setNumWords(rcscanner.countWords(txtMain.Text));
+            rctracker.setNumSyllables(rcscanner.countSyllables(txtMain.Text));
+            rctracker.setNumIPs(rcscanner.countIPs(txtMain.Text));
 
+            lblSyllableCount.Content = rctracker.getNumSyllables();
             lblWordCount.Content = rctracker.getNumWords();
             lblSentenceCount.Content = rctracker.getNumSentences();
 

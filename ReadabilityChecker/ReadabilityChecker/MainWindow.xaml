@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReadabilityChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="779.215" Width="1161.919">
     <Grid>
-        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="367" Margin="233,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="544"/>
-        <Button x:Name="btnCheckReadability" Content="Readability Checker" HorizontalAlignment="Left" Margin="28,44,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="39"/>
-        <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="31,118,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="107,118,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="31,166,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="107,166,0,0" VerticalAlignment="Top" Width="80"/>
+
+        <TextBox x:Name="txtMain" HorizontalAlignment="Left" Height="733" Margin="291,9,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="856" AcceptsReturn="True" AcceptsTab="True" FontSize="18px"/>
+        <Button x:Name="btnCheckReadability" Content="Readability Checker" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="39" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="96,168,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="96,199,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="lblSyllables" Content="Syllables:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="lblSyllableCount" Content="" HorizontalAlignment="Left" Margin="96,230,0,0" VerticalAlignment="Top" Width="80"/>
 
     </Grid>
 </Window>
