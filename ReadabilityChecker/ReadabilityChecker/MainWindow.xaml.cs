@@ -47,9 +47,7 @@ namespace ReadabilityChecker
        //     String plainText = stripHtmlTags(htmlEditor.getHtmlText());
 
             // sentence count requires both pre and post HTML strip scans
-          /*  rctracker.setNumSentences(
-                (rcscanner.countSentencesPreHTMLStrip(htmlEditor.getHtmlText()))
-                + (rcscanner.countSentencesPostHTMLStrip(plainText))); */
+           rctracker.setNumSentences(rcscanner.countSentencesPostHTMLStrip(txtMain.Text));
 
          //   rctracker.setNumLists(rcscanner.countLists(htmlEditor.getHtmlText()));
 
@@ -57,6 +55,8 @@ namespace ReadabilityChecker
             rctracker.setNumWords(rcscanner.countWords(txtMain.Text));
 
             lblWordCount.Content = rctracker.getNumWords();
+            lblSentenceCount.Content = rctracker.getNumSentences();
+
         }
     }
 }

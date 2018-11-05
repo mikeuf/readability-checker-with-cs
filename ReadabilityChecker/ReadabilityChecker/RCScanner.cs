@@ -32,37 +32,27 @@ namespace ReadabilityChecker
         }
 
 
-        /*
+        
         public int countNBSPs(String s)
 {
 
-                private static readonly String NBSP_PATTERN = "((nbsp;)(<.*>)?(<\\/p>|<\\/h|<\\/li>|<br))";
+               var NBSP_PATTERN = new Regex(@"((nbsp;)(<.*>)?(<\/p>|<\/h|<\/li>|<br))");
 
-int i = 0;
-Pattern p = Pattern.compile(NBSP_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
+            MatchCollection matches = NBSP_PATTERN.Matches(s);
+
+            return matches.Count;
         }
-
+        
         public int countURLs(String s)
 {
 
-        private static readonly String URL_PATTERN = "((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$\\/)";
+        var URL_PATTERN = new Regex(@"((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$\/)");
 
-int i = 0;
-Pattern p = Pattern.compile(URL_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
+    MatchCollection matches = URL_PATTERN.Matches(s);
+
+            return matches.Count;
         }
-        */
+        
 
         public int countWords(String s)
 {
@@ -73,49 +63,32 @@ Matcher matcher = p.matcher(s);
 
     return matches.Count;
 }
-        /*
+        
 
         public int countSyllables(String s)
 {
 
-        private static readonly String SYLLABLE_PATTERN = "((?i)(?!ed\\b)([aeiouy]{1,3})(?<!e\\b(?<!le\\b)(?<!the|be|he|me)))";
+        var SYLLABLE_PATTERN = new Regex(@"((?i)(?!ed\b)([aeiouy]{1,3})(?<!e\b(?<!le\b)(?<!the|be|he|me)))");
 
-int i = 0;
-Pattern p = Pattern.compile(SYLLABLE_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
+            MatchCollection matches = SYLLABLE_PATTERN.Matches(s);
+
+            return matches.Count;
         }
 
-        public int countSentencesPreHTMLStrip(String s)
-{
-    int i = 0;
-    Pattern p = Pattern.compile(PRE_HTML_STRIP_SENTENCE_PATTERN);
-    Matcher matcher = p.matcher(s);
-    while (matcher.find())
-    {
-        ++i;
-    }
-    return i;
-}
+     
 
-public int countSentencesPostHTMLStrip(String s)
-{
+public int countSentencesPostHTMLStrip(String s) {
 
-                private static readonly String POST_HTML_STRIP_SENTENCE_PATTERN = "(\\s?([A-Za-z]{2,}|[0-9]+)[\\}\\]\\)\"\']*[.!?;]+[\"\']?)";
+               // var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)"']*[\.!?;]+["']?");
 
-int i = 0;
-Pattern p = Pattern.compile(POST_HTML_STRIP_SENTENCE_PATTERN);
-Matcher matcher = p.matcher(s);
-            while (matcher.find())
-            {
-                ++i;
-            }
-            return i;
+
+
+                    var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{2,}|[0-9]+)[\}\]\)\""\']*[\.!?;]+[""\']?");
+
+         MatchCollection matches = POST_HTML_STRIP_SENTENCE_PATTERN.Matches(s);
+
+            return matches.Count;
         }
-        */
+        
     }
 }

@@ -11,6 +11,8 @@
         <Button x:Name="btnCheckReadability" Content="Readability Checker" HorizontalAlignment="Left" Margin="28,44,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click" Height="39"/>
         <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="31,118,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="107,118,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="31,166,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="107,166,0,0" VerticalAlignment="Top" Width="80"/>
 
     </Grid>
 </Window>
