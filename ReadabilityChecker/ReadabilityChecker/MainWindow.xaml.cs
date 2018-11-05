@@ -9,13 +9,6 @@ namespace ReadabilityChecker {
     /// and sentences in order to determine the readability. The RCScanner scans the
     /// text and sends the data to the RCTracker which tabulates the data
     /// and performs various calculations to return the FK grade and score
-    /// 
-    /// Note: This scanner intentionally handles lists differently
-    /// than other applications, like Microsoft Word. This tool will count
-    /// each line in a bullet list, or an ordered list, as a sentence, even
-    /// if it lacks punctuation. MS Word will ignore them. This difference is intentional
-    /// to encourage people to break-up large paragraphs into lists, which are
-    /// more readable.
     /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
@@ -34,14 +27,16 @@ namespace ReadabilityChecker {
             RCScanner scanner = new RCScanner();
             RCTracker tracker = new RCTracker();
 
+            // append a newline at the end to ensure all sentences are counted
+            txtMain.AppendText(Environment.NewLine);
+
             // scan the text and populate the counters
             tracker.NumSentences = scanner.CountSentences(txtMain.Text);
             tracker.NumWords = scanner.CountWords(txtMain.Text);
             tracker.NumSyllables = scanner.CountSyllables(txtMain.Text);
             tracker.NumIPs = scanner.CountIPs(txtMain.Text);
-            tracker.NumLists = scanner.CountLists(txtMain.Text);
 
-            /* Adjust some counters for special cases, such as lists and IP addresses.
+            /* Adjust some counters for special cases, such as IP addresses.
              * Then perform the calculations.
              */
             tracker.ApplyModifiers();

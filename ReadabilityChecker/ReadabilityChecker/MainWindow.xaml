@@ -35,10 +35,10 @@
         </Button>
         <Label x:Name="lblWords" Content="Words:" HorizontalAlignment="Left" Margin="44,308,0,0" VerticalAlignment="Top" Width="88"/>
         <Label x:Name="lblWordCount" Content="" HorizontalAlignment="Left" Margin="218,308,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="44,334,0,0" VerticalAlignment="Top" Width="124"/>
-        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="218,334,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
         <Label x:Name="lblSyllables" Content="Syllables:" HorizontalAlignment="Left" Margin="44,360,0,0" VerticalAlignment="Top" Width="162"/>
         <Label x:Name="lblSyllableCount" Content="" HorizontalAlignment="Left" Margin="218,360,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSentences" Content="Sentences:" HorizontalAlignment="Left" Margin="44,334,0,0" VerticalAlignment="Top" Width="124"/>
+        <Label x:Name="lblSentenceCount" Content="" HorizontalAlignment="Left" Margin="218,334,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
         <Label x:Name="lblSyllablesPerWord" Content="Syllables Per Word:" HorizontalAlignment="Left" Margin="44,386,0,0" VerticalAlignment="Top" Width="162"/>
         <Label x:Name="lblSyllablesPerWordCount" Content="" HorizontalAlignment="Left" Margin="218,386,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
         <Label x:Name="lblWordsPerSentence" Content="Words Per Sentence:" HorizontalAlignment="Left" Margin="44,412,0,0" VerticalAlignment="Top" Width="162"/>

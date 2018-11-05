@@ -19,19 +19,6 @@ namespace ReadabilityChecker {
         }
 
         /// <summary>
-        /// Counts the number of lists, such as bullet lists or ordered lists
-        /// </summary>
-        /// <param name="text">The contents of the main text field</param>
-        /// <returns>the number of lists found</returns>
-        public int CountLists(String text) {
-            string LIST_PATTERN = @"^([A-Za-z]|[0-9]){1,2}[\.)].*$";
-            MatchCollection matches = Regex.Matches(text, LIST_PATTERN, RegexOptions.Multiline);
-            Console.WriteLine(matches.Count);
-
-            return matches.Count;
-        }
-
-        /// <summary>
         /// Counts the number of URLs
         /// </summary>
         /// <param name="text">The contents of the main text field</param>
@@ -73,9 +60,8 @@ namespace ReadabilityChecker {
         /// <param name="text">The contents of the main text field</param>
         /// <returns>the number of sentences found</returns>
         public int CountSentences(String text) {
-            var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?([A-Za-z]{1,2}|[0-9]{1,2})?[\}\]\)\""\']*([\.!?;]|(\n|\r|\r\n))+[""\']?");
+            var POST_HTML_STRIP_SENTENCE_PATTERN = new Regex(@"\s?(([A-Za-z]{1,2}|[0-9]{1,2})[\.!?;][""\']?)");
             MatchCollection matches = POST_HTML_STRIP_SENTENCE_PATTERN.Matches(text);
-            Console.WriteLine("Sentences: " + matches.Count);
 
             return matches.Count;
         }
