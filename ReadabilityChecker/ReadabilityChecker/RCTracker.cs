@@ -12,7 +12,6 @@ namespace ReadabilityChecker {
         internal int NumSentences { get; set; }
         internal int NumSyllables { get; set; }
         internal int NumIPs { get; set; }
-        internal int NumNBSPs { get; set; }
 
         // calculated from the counter values
         internal double NumWordsPerSentence { get; set; }
@@ -28,7 +27,6 @@ namespace ReadabilityChecker {
             NumSentences = 0;
             NumSyllables = 0;
             NumIPs = 0;
-            NumNBSPs = 0;
             NumWordsPerSentence = 0;
             NumSyllablesPerWord = 0;
             FKGrade = 0;
@@ -39,7 +37,6 @@ namespace ReadabilityChecker {
         /// Adjusts the number of words and sentences to avoid double counting of certain items
         /// </summary>
         public void ApplyModifiers() {
-
             if (NumIPs > 0) {
                // Don"t count every octet of an IP address as a word
                NumWords -= (NumIPs * 4);

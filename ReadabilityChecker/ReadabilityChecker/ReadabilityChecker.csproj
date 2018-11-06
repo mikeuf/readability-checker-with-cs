@@ -55,7 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RCChecker.cs" />
     <Compile Include="RCScanner.cs" />
     <Compile Include="RCTracker.cs" />
     <Page Include="MainWindow.xaml">
