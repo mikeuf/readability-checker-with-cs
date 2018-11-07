@@ -2,7 +2,7 @@
 
 namespace ReadabilityChecker {
     /// <summary>
-    /// Scans the text and counts the number of items found, such as
+    /// Stores counters of items found by the scanner and performs Flesch-Kincaid 
     /// words, syllables and sentences.
     /// </summary>
     class RCTracker {
@@ -52,7 +52,7 @@ namespace ReadabilityChecker {
         }
 
         /// <summary>
-        /// Calculates the number of words for sentence
+        /// Calculates the number of words per sentence
         /// </summary>
         public void CalculateNumWordsPerSentence() {
             if(NumSentences > 0) {
