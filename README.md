@@ -1,4 +1,4 @@
-# Readability Checker with C#
+# Readability Checker with C# and WPF
 This program performs a Flesch-Kincaid readability analysis by scanning the characters in the text and counting the number of words, syllables, sentences, and other items, in order to determine the overall text readability. Statistics are provided, including brief suggestions for how to improve text readability. Both a Flesch-Kincaid score and grade level are calculated.<br /><br />
 More information about Flesh-Kincaid readability tests is available from Wikipedia:
 https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests
