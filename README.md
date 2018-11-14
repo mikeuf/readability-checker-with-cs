@@ -1,13 +1,11 @@
 # Readability Checker with C# and WPF
-**Note:** Unit tests are available here:<br />
-https://github.com/mikeuf/unit-test-readability-checker-cs
-
 This program performs a Flesch-Kincaid readability analysis by scanning the characters in the text and counting the number of words, syllables, sentences, and other items, in order to determine the overall text readability. Statistics are provided, including brief suggestions for how to improve text readability. Both a Flesch-Kincaid score and grade level are calculated.<br /><br />
 More information about Flesh-Kincaid readability tests is available from Wikipedia:
 https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests
 ## Table of Contents
 **[How to Run this Program](#how-to-run-this-program)**  
 **[Examples of Readability Analyses](#examples-of-readability-analyses)**<br /> 
+**[Unit Tests](#unit-tests)**<br /> 
 
 ## How to Run this Program
 Aan executable file called **ReadabilityChecker.exe** is available here:<br />
@@ -32,3 +30,7 @@ The Readability Checker will provide an analysis of the selection. Text with goo
 ![Difficult readability](https://github.com/mikeuf/readability-checker-with-cs/blob/master/screenshots/difficult-readability.jpg "Difficult readability")
 <br />
 <br />
+
+## Unit Tests
+Unit tests are available here:<br />
+https://github.com/mikeuf/unit-test-readability-checker-cs
